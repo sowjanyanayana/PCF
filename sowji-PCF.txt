@@ -1,0 +1,89 @@
+Traditional data center:Everything we have to maintain eg:storage,os,servers,network etc
+infrastructure as a service:
+severers and maintainance take care by cloud eg:os,virtualisation,servers,storage,network...these given by cloud ..remaining we have to take care
+platform:
+along infrastucture runtime and middleware is provided i.e., we will deploy and maintain it
+software:
+nothing we have to maintain.. we wwill based on the uasge
+
+services redis,mysql,mongodb 
+framework java ,spring,node
+
+2 cloud types:
+1.public
+less cost
+2.private 
+high costeg:IBM cloud
+and other hybrid cloud also there
+
+*cloud is language independent
+*its a open source achieved by buidpacks
+
+cloud foundary: we can ineract with cloud in 3 ways
+1)web console
+2)CLI:(command line inetrface)
+to check it is installed or not
+in cmd
+cf --version
+to intaract with cloud cf login -a api.run.pivotal.io ...using this we have to login
+change cmd to specified path where our app. is present
+to push app. to cloud
+cf push <appname> -n <hostname> -i <no.of instances> -m <memory> -p <pathof war>
+eg:cf push spring-music -n spring-music-sowji271 -i 1 -m 1024m -p spring-music.war
+we can also enter build pack details -b <buildpack>
+
+when we push using cf push it goes to router(validate our url which we entered like sowji271)
+and forwards the request to cloud controller
+cloud controller manages 2..
+1.cloud controller db(CCDB)
+all meta data(no.of instances,host,memory,path,buildpack) goes to CCDB
+The entire war along with 1 droplet dropped into BLOB
+
+BLOB(binary large OBject):
+create a many DEA(droplet Execution Agent)....one DEA has many warden/garden containers...these are stakelessi.e., independent
+the droplet is dropped into wraden/garden cntainers
+
+To our application wnats to consume we have service broker and health manager
+once app is deployed health manger moniters this work
+messaging ,login take care by service broker
+
+entire communication is happen through bus called NATS
+
+to see deployed apps
+cf apps
+cf delete -f <app-name>
+cf stop
+for help
+Eg:cf help command( push,stop)
+cf target-to switch spaces
+cf org-to switch org
+cf create-space testing ----to  create another space for testing,devolopment or production
+cloud OS is BOSH
+
+3)IDE like eclipse,sts
+remove the existing server
+and add our pivotal web services account and validate
+then run the app on server it automatically deploys into cloud
+
+
+
+devoloper benifit---stop,refresh..
+operator benefits--install and manage, target multiple clouds
+
+Application--unit of deployment
+buildpacks---language independent is bcz of this...based on app we deploy it deducts the required build packs
+Manifests---carries metadata
+Organisation---work under multiple environment spaces(devoloment,testing,production) with supporting servers
+Organisation roles--1.Org. Auditor---can have view access
+2.Org. manager--can manage
+
+Application Space Roles:
+Space Manager
+Space Devoloper--can delete,create,manage,full access to app.
+Space Auditor
+
+Administrator user/roles:
+Quotas:total memory
+Domain:cfapps.io,apps.internal,cf-tcapps.io we can new domain like swoko.com
+Services:db,messaging,mail...
+
