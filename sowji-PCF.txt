@@ -87,3 +87,30 @@ Quotas:total memory
 Domain:cfapps.io,apps.internal,cf-tcapps.io we can new domain like swoko.com
 Services:db,messaging,mail...
 
+19-03-2019
+----------------
+Logging:
+metron agent takes all the logs and metric report(about health of app)
+the logging server stores all the log files.normally the log files store in server
+And this is not a permanent storage so we have to maintain a third party log server to store the log files
+third party log server  eg:splunk,kibana etc
+loggining server to loggregator traffic server(doppler)
+
+deployment isues:
+Flapping:memory low
+jar/ war more size
+
+cf push -t 120 ---timeout we can add
+
+
+Services:
+CF managed:servers is managed by them .no need to manege by us
+user defined service:
+if we want to add any third party server..cloud can give user defined services for connection
+
+
+when we create a app:
+1.create service instance
+bind the service instance with app
+restage the application
+
