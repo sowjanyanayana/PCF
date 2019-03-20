@@ -114,3 +114,22 @@ when we create a app:
 bind the service instance with app
 restage the application
 
+
+YAML
+we can also use yaml document instead of writing evaeything in cmd
+we can directly use cf push -f <yaml doc name>
+
+
+Scaling:
+update instances(horizontal)
+update memory(vertical)
+
+Buildpacks:
+cf automatically detects the which application we are deploying
+The os ,runtime is maintained by build packs bcz it is stateless
+it creates a droplet in warden/garden containers and it is containers
+
+buildpack structure
+detect-detect suitabke buidpack
+compile-it will assemble required runtime and servers for the appliaction
+release-starting app
