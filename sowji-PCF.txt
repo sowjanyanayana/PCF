@@ -144,5 +144,24 @@ release-starting app
 
 
 
-Architeture:
+12-factor design principles:
+1.codebase:
+2.dependencies:
+3.configuration:
+4.backing services
+5.build release,run
+6.process
+7.port binding
+8.concurrency
+9.disposability
+10.dev|production parity
+11.logs
+12.admin process
+
+Session management:
+session is imp to store our entered data..if suddenly app is crashed..by using session..it will store our session id related to our work..after crashing it will
+strat again without deleting the data we entered
+
+
+
 
