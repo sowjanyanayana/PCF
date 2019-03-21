@@ -1,3 +1,5 @@
+
+https://github.com/MyTraining2019/PCF
 Traditional data center:Everything we have to maintain eg:storage,os,servers,network etc
 infrastructure as a service:
 severers and maintainance take care by cloud eg:os,virtualisation,servers,storage,network...these given by cloud ..remaining we have to take care
@@ -42,6 +44,7 @@ The entire war along with 1 droplet dropped into BLOB
 BLOB(binary large OBject):
 create a many DEA(droplet Execution Agent)....one DEA has many warden/garden containers...these are stakelessi.e., independent
 the droplet is dropped into wraden/garden cntainers
+itsa storage
 
 To our application wnats to consume we have service broker and health manager
 once app is deployed health manger moniters this work
@@ -58,6 +61,7 @@ Eg:cf help command( push,stop)
 cf target-to switch spaces
 cf org-to switch org
 cf create-space testing ----to  create another space for testing,devolopment or production
+cf logs spring-music-sowji271 ---for log reports
 cloud OS is BOSH
 
 3)IDE like eclipse,sts
@@ -84,8 +88,10 @@ Space Auditor
 
 Administrator user/roles:
 Quotas:total memory
-Domain:cfapps.io,apps.internal,cf-tcapps.io we can new domain like swoko.com
+Domain:cfapps.io,apps.internal,cf-tcapps.io we can add our own new domain like swoko.com
 Services:db,messaging,mail...
+
+
 
 19-03-2019
 ----------------
@@ -115,6 +121,7 @@ bind the service instance with app
 restage the application
 
 
+
 YAML
 we can also use yaml document instead of writing evaeything in cmd
 we can directly use cf push -f <yaml doc name>
@@ -133,3 +140,9 @@ buildpack structure
 detect-detect suitabke buidpack
 compile-it will assemble required runtime and servers for the appliaction
 release-starting app
+
+
+
+
+Architeture:
+
